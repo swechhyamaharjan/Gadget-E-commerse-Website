@@ -10,7 +10,7 @@ import uploadRouter from "./routers/uploadRouter.js"
 const app = express();
 
 app.use(cors({
-  origin: ["http://localhost:5173"],
+  origin: ["http://localhost:5173", "https://gadget-ecommerce-backend.vercel.app"],
   credentials: true,
 }));
 
