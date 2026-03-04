@@ -18,10 +18,11 @@ function Header() {
   const logoutHandler = async () => {
     try {
       await logout().unwrap();
+    } catch (err) {
+      toast.error(err?.data?.error || "Logout failed");
+    } finally {
       dispatch(removeCredentials());
       navigate("/");
-    } catch (err) {
-      toast.error(err?.data?.error);
     }
   };
 
